@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="556f11a2-0b60-44e1-b85c-f6610069499d" activeEnvironment="Default" name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR" resourceRoot="${projectDir}" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="63ca8531-b6f1-4eba-b2cf-40908f9678ad" wsaVersion="NONE" name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR" type="wsdl" bindingName="{http://www.example.org}WS_MM_PEDIDO_PENDIENTE_POR_SURTIR" soapVersion="1_1" anonymous="optional" definition="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\E:\OneDrive\Documentos\QA\12.%20Reservas%20pedidos%20por%20surtir_AAR\WS_MM_PEDIDO_PENDIENTE_POR_SURTIR\WS_MM_PEDIDO_PENDIENTE_POR_SURTIR.wsdl"><con:part><con:url>file:\E:\OneDrive\Documentos\QA\12.%20Reservas%20pedidos%20por%20surtir_AAR\WS_MM_PEDIDO_PENDIENTE_POR_SURTIR\WS_MM_PEDIDO_PENDIENTE_POR_SURTIR.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.org" xmlns:n0="http://www.example.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org">
+      <xsd:element name="ElementInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="A_ReservationDocumentHeader" type="n0:ReservationDocumentItem"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ElementOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="dt_response" type="n0:dt_response"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="dt_response">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="error" type="n0:error"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="result" type="n0:result"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="result">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="NumeroDocumento" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="FechaCreacion" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReservationDocumentItem">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FechadelaReserva" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CentroCosto" type="xsd:string"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="to_ReservationDocumentItem" type="n0:root"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="root">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="IdPos" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Producto" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Puntovta" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CantidaddelaReserva" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BodyInput">
+    <wsdl:part name="parameters" element="n0:ElementInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BodyOutput">
+    <wsdl:part name="parameters" element="n0:ElementOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR">
+    <wsdl:operation name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR">
+      <wsdl:input message="n0:BodyInput"></wsdl:input>
+      <wsdl:output message="n0:BodyOutput"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR" type="n0:WS_MM_PEDIDO_PENDIENTE_POR_SURTIR">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__binding"/>
+    </wsp:Policy>
+    <wsdl:operation name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR">
+      <soap:operation soapAction="http://www.example.org"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR">
+    <wsdl:port name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR" binding="n0:WS_MM_PEDIDO_PENDIENTE_POR_SURTIR">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_pedido_pendiente_por_surtir"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:UsingPolicy required="true"/>
+  <wsp:Policy wsu:Id="BN__binding">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <wsp:ExactlyOne>
+                      <sp:HttpBasicAuthentication/>
+                      <sp:RequireClientCertificate/>
+                    </wsp:ExactlyOne>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <wsp:ExactlyOne>
+                  <sp:Basic256/>
+                  <sp:Basic192/>
+                  <sp:Basic128/>
+                  <sp:TripleDes/>
+                  <sp:Basic256Rsa15/>
+                  <sp:Basic192Rsa15/>
+                  <sp:Basic128Rsa15/>
+                  <sp:TripleDesRsa15/>
+                  <sp:Basic256Sha256/>
+                  <sp:Basic192Sha256/>
+                  <sp:Basic128Sha256/>
+                  <sp:TripleDesSha256/>
+                  <sp:Basic256Sha256Rsa15/>
+                  <sp:Basic192Sha256Rsa15/>
+                  <sp:Basic128Sha256Rsa15/>
+                  <sp:TripleDesSha256Rsa15/>
+                </wsp:ExactlyOne>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_pedido_pendiente_por_surtir</con:endpoint></con:endpoints><con:operation id="1955630a-043d-4505-b148-92adc471db2b" isOneWay="false" action="http://www.example.org" name="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR" bindingOperationName="WS_MM_PEDIDO_PENDIENTE_POR_SURTIR" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8b92794e-0560-426a-86a9-ce143d2c767c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_pedido_pendiente_por_surtir</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <exam:ElementInput>\r
+         <A_ReservationDocumentHeader>\r
+            <FechadelaReserva>?</FechadelaReserva>\r
+            <CentroCosto>?</CentroCosto>\r
+            <!--1 or more repetitions:-->\r
+            <to_ReservationDocumentItem>\r
+               <IdPos>?</IdPos>\r
+               <Producto>?</Producto>\r
+               <Puntovta>?</Puntovta>\r
+               <CantidaddelaReserva>?</CantidaddelaReserva>\r
+            </to_ReservationDocumentItem>\r
+         </A_ReservationDocumentHeader>\r
+      </exam:ElementInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
