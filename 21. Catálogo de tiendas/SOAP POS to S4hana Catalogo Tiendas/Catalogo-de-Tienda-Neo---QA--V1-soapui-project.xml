@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5bc1a78c-9f2e-46a3-adb9-ff5aabd98289" activeEnvironment="Default" name="SI_CatalogoTienda_POS_to_S4" resourceRoot="${projectDir}" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="12c9ebff-677a-400b-a82b-7e5e94c42bac" wsaVersion="NONE" name="SI_CatalogoTienda_POS_to_S4Binding" type="wsdl" bindingName="{http://freiche.com/S4/CatalogoTienda}SI_CatalogoTienda_POS_to_S4Binding" soapVersion="1_1" anonymous="optional" definition="SI_CatalogoTienda_POS_to_S4.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\E:\OneDrive\Documentos\QA\21.%20Catálogo%20de%20tiendas\SOAP%20POS%20to%20S4hana%20Catalogo%20Tiendas\SI_CatalogoTienda_POS_to_S4.wsdl"><con:part><con:url>file:\E:\OneDrive\Documentos\QA\21.%20Catálogo%20de%20tiendas\SOAP%20POS%20to%20S4hana%20Catalogo%20Tiendas\SI_CatalogoTienda_POS_to_S4.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://freiche.com/S4/CatalogoTienda" xmlns:p1="http://freiche.com/S4/CatalogoTienda" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://freiche.com/S4/CatalogoTienda" xmlns="http://freiche.com/S4/CatalogoTienda">
+      <xsd:element name="MT_Resp" type="dt_response"/>
+      <xsd:element name="MT_Rqst" type="dt_request"/>
+      <xsd:complexType name="dt_response">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="error">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="code" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="message" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="A_Tiendas">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Sociedad" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Tienda" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="OrganizacionCompra" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="OrganizacionVenta" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="CanalDistribucion" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Sector" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="RazonSocial" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Direccion" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Lugar" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Calle" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="NumeroExterior" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="NumeroInterior" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Colonia" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Localidad" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Referencia" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Municipio" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Estado" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="CP" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Telefono" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="ClaveFacturaPV" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="TipoPuntoVenta" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Giro" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Pais" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Zona" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="ZonaFiscal" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="ZonaHoraria" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="ZonaGeografica" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Activo" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="dt_request">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Zcode" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Sociedad" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_Rqst">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_Rqst" element="p1:MT_Rqst"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MT_Resp">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_Resp" element="p1:MT_Resp"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SI_CatalogoTienda_POS_to_S4">
+    <wsdl:documentation/>
+    <wsdl:operation name="SI_CatalogoTienda_POS_to_S4">
+      <wsdl:documentation/>
+      <wsdl:input message="p1:MT_Rqst"></wsdl:input>
+      <wsdl:output message="p1:MT_Resp"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_CatalogoTienda_POS_to_S4Binding" type="p1:SI_CatalogoTienda_POS_to_S4">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__binding"/>
+    </wsp:Policy>
+    <wsdl:operation name="SI_CatalogoTienda_POS_to_S4">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_CatalogoTienda_POS_to_S4Service">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_CatalogoTienda_POS_to_S4Binding">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/POS/S4/CatalogoTienda"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:UsingPolicy required="true"/>
+  <wsp:Policy wsu:Id="BN__binding">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <wsp:ExactlyOne>
+                      <sp:HttpBasicAuthentication/>
+                      <sp:RequireClientCertificate/>
+                    </wsp:ExactlyOne>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <wsp:ExactlyOne>
+                  <sp:Basic256/>
+                  <sp:Basic192/>
+                  <sp:Basic128/>
+                  <sp:TripleDes/>
+                  <sp:Basic256Rsa15/>
+                  <sp:Basic192Rsa15/>
+                  <sp:Basic128Rsa15/>
+                  <sp:TripleDesRsa15/>
+                  <sp:Basic256Sha256/>
+                  <sp:Basic192Sha256/>
+                  <sp:Basic128Sha256/>
+                  <sp:TripleDesSha256/>
+                  <sp:Basic256Sha256Rsa15/>
+                  <sp:Basic192Sha256Rsa15/>
+                  <sp:Basic128Sha256Rsa15/>
+                  <sp:TripleDesSha256Rsa15/>
+                </wsp:ExactlyOne>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/POS/S4/CatalogoTienda</con:endpoint></con:endpoints><con:operation id="97c1916a-d514-4e55-8223-8acd62570d27" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="SI_CatalogoTienda_POS_to_S4" bindingOperationName="SI_CatalogoTienda_POS_to_S4" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5f8cb075-3aa8-48b2-b179-57e8d4df4beb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/POS/S4/CatalogoTienda</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cat="http://freiche.com/S4/CatalogoTienda">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cat:MT_Rqst>\r
+         <Zcode>?</Zcode>\r
+         <Sociedad>?</Sociedad>\r
+      </cat:MT_Rqst>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
