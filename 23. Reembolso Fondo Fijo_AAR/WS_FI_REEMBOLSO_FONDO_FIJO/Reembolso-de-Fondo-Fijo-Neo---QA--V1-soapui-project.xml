@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="67205322-c879-4e72-b928-036942f3ea45" activeEnvironment="Default" name="WS_FI_REEMBOLSO_FONDO_FIJO" resourceRoot="${projectDir}" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="2caacea6-f49f-4465-90d5-c410beb06f49" wsaVersion="NONE" name="WS_FI_REEMBOLSO_FONDO_FIJOSOAP" type="wsdl" bindingName="{http://www.example.org}WS_FI_REEMBOLSO_FONDO_FIJOSOAP" soapVersion="1_1" anonymous="optional" definition="WS_FI_REEMBOLSO_FONDO_FIJO.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\E:\OneDrive\Documentos\QA\23.%20Reembolso%20Fondo%20Fijo_AAR\WS_FI_REEMBOLSO_FONDO_FIJO\WS_FI_REEMBOLSO_FONDO_FIJO.wsdl"><con:part><con:url>file:\E:\OneDrive\Documentos\QA\23.%20Reembolso%20Fondo%20Fijo_AAR\WS_FI_REEMBOLSO_FONDO_FIJO\WS_FI_REEMBOLSO_FONDO_FIJO.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.org" xmlns:n0="http://www.example.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org">
+      <xsd:element name="ElementInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Reembolso" type="n0:ReembolsoFondoFijo"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ElementOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="dt_response" type="n0:dt_response"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="dt_response">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="error" type="n0:error"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="result" type="n0:result"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="result">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="NumeroDocumento" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="FechaCreacion" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReembolsoFondoFijo">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Fechacontabilizacion" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="PuntoVta" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Referencia" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FechaInicio" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FechaFin" type="xsd:string"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="ReembolsoFondoFijoItem" type="n0:root"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="root">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Importe" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="IndImpuesto" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DescPosicion" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CuentaSap" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="RFCProveedorAsignacion" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BodyInput">
+    <wsdl:part name="parameters" element="n0:ElementInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BodyOutput">
+    <wsdl:part name="parameters" element="n0:ElementOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WS_FI_REEMBOLSO_FONDO_FIJO">
+    <wsdl:operation name="WS_FI_REEMBOLSO_FONDO_FIJO">
+      <wsdl:input message="n0:BodyInput"></wsdl:input>
+      <wsdl:output message="n0:BodyOutput"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_FI_REEMBOLSO_FONDO_FIJOSOAP" type="n0:WS_FI_REEMBOLSO_FONDO_FIJO">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__binding"/>
+    </wsp:Policy>
+    <wsdl:operation name="WS_FI_REEMBOLSO_FONDO_FIJO">
+      <soap:operation soapAction="http://www.example.org"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_FI_REEMBOLSO_FONDO_FIJO">
+    <wsdl:port name="WS_FI_REEMBOLSO_FONDO_FIJOSOAP" binding="n0:WS_FI_REEMBOLSO_FONDO_FIJOSOAP">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_reembolso_fondo_fijo"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:UsingPolicy required="true"/>
+  <wsp:Policy wsu:Id="BN__binding">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <wsp:ExactlyOne>
+                      <sp:HttpBasicAuthentication/>
+                      <sp:RequireClientCertificate/>
+                    </wsp:ExactlyOne>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <wsp:ExactlyOne>
+                  <sp:Basic256/>
+                  <sp:Basic192/>
+                  <sp:Basic128/>
+                  <sp:TripleDes/>
+                  <sp:Basic256Rsa15/>
+                  <sp:Basic192Rsa15/>
+                  <sp:Basic128Rsa15/>
+                  <sp:TripleDesRsa15/>
+                  <sp:Basic256Sha256/>
+                  <sp:Basic192Sha256/>
+                  <sp:Basic128Sha256/>
+                  <sp:TripleDesSha256/>
+                  <sp:Basic256Sha256Rsa15/>
+                  <sp:Basic192Sha256Rsa15/>
+                  <sp:Basic128Sha256Rsa15/>
+                  <sp:TripleDesSha256Rsa15/>
+                </wsp:ExactlyOne>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_reembolso_fondo_fijo</con:endpoint></con:endpoints><con:operation id="b9f04577-1fd7-42e1-a87d-764251907cce" isOneWay="false" action="http://www.example.org" name="WS_FI_REEMBOLSO_FONDO_FIJO" bindingOperationName="WS_FI_REEMBOLSO_FONDO_FIJO" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="72dca325-d86d-44b9-88eb-0f64fe6a05d3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_reembolso_fondo_fijo</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <exam:ElementInput>\r
+         <Reembolso>\r
+            <Fechacontabilizacion>?</Fechacontabilizacion>\r
+            <PuntoVta>?</PuntoVta>\r
+            <Referencia>?</Referencia>\r
+            <FechaInicio>?</FechaInicio>\r
+            <FechaFin>?</FechaFin>\r
+            <!--1 or more repetitions:-->\r
+            <ReembolsoFondoFijoItem>\r
+               <Importe>?</Importe>\r
+               <IndImpuesto>?</IndImpuesto>\r
+               <DescPosicion>?</DescPosicion>\r
+               <CuentaSap>?</CuentaSap>\r
+               <RFCProveedorAsignacion>?</RFCProveedorAsignacion>\r
+            </ReembolsoFondoFijoItem>\r
+         </Reembolso>\r
+      </exam:ElementInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

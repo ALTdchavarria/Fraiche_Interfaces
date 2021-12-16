@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e04c5386-ae99-44d6-a0a1-4889f690efef" activeEnvironment="Default" name="Traspaso entre tiendas" resourceRoot="${projectDir}" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9d25854d-a3bb-4a0d-b3b1-56537f15eb35" wsaVersion="NONE" name="WS_MM_TRASLADO_TIENDAS" type="wsdl" bindingName="{http://www.example.org}WS_MM_TRASLADO_TIENDAS" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/Daniel%20Chavarria/Downloads/WS_MM_TRASLADO_TIENDAS%20V1.3.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/Daniel%20Chavarria/Downloads/WS_MM_TRASLADO_TIENDAS%20V1.3.wsdl"><con:part><con:url>file:/C:/Users/Daniel%20Chavarria/Downloads/WS_MM_TRASLADO_TIENDAS%20V1.3.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.org" xmlns:n0="http://www.example.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org">
+      <xsd:element name="ElementInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="GoodsMovementCode" type="n0:MaterialDocumentItem"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ElementOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="dt_response" type="n0:dt_response"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="dt_response">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="error" type="n0:error"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="result" type="n0:result"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="result">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="NumeroDocumento" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="FechaCreacion" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MaterialDocumentItem">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Fechacontabilizacion" type="xsd:string"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="to_MaterialDocumentItem" type="n0:root"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="root">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="PuntovtaOrigen" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Producto" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Cantidad" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="PuntovtaReceptora" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BodyInput">
+    <wsdl:part name="parameters" element="n0:ElementInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BodyOutput">
+    <wsdl:part name="parameters" element="n0:ElementOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WS_MM_TRASLADO_TIENDAS">
+    <wsdl:operation name="WS_MM_TRASLADO_TIENDAS">
+      <wsdl:input message="n0:BodyInput"></wsdl:input>
+      <wsdl:output message="n0:BodyOutput"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_MM_TRASLADO_TIENDAS" type="n0:WS_MM_TRASLADO_TIENDAS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="WS_MM_TRASLADO_TIENDAS">
+      <soap:operation soapAction="http://www.example.org"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_MM_TRASLADO_TIENDAS">
+    <wsdl:port name="WS_MM_TRASLADO_TIENDAS" binding="n0:WS_MM_TRASLADO_TIENDAS">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_traslado_entre_tiendas"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_traslado_entre_tiendas</con:endpoint></con:endpoints><con:operation id="35a783fa-4fca-42f7-9e55-0bd80b2fe5a6" isOneWay="false" action="http://www.example.org" name="WS_MM_TRASLADO_TIENDAS" bindingOperationName="WS_MM_TRASLADO_TIENDAS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="140c90ce-ed65-45e0-aafa-6d833c6268ff" name="put_traslado_entre_tiendas"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_traslado_entre_tiendas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <exam:ElementInput>\r
+         <GoodsMovementCode>\r
+            <Fechacontabilizacion>2021-04-19T00:00:00</Fechacontabilizacion>
+            <!--1 or more repetitions:-->
+            <to_MaterialDocumentItem>
+               <PuntovtaOrigen>F032</PuntovtaOrigen>
+               <Producto>1000043</Producto>
+               <Cantidad>1</Cantidad>
+               <PuntovtaReceptora>F086</PuntovtaReceptora>
+            </to_MaterialDocumentItem>
+         </GoodsMovementCode>\r
+      </exam:ElementInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>S0022850690</con:username><con:password>Fr@iche.2021</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

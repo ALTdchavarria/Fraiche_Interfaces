@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="dcc17f40-5a61-4d19-b6d1-f48c60174581" activeEnvironment="Default" name="Articulos Por Tienda Neo - QA" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6731d178-d853-4d01-8fdd-2b49b94a2496" wsaVersion="NONE" name="WS_MM_ARTICULOS_POR_TIENDA" type="wsdl" bindingName="{http://www.example.org}WS_MM_ARTICULOS_POR_TIENDA" soapVersion="1_1" anonymous="optional" definition="file:/C:/A/CPI/EF/Ajustes%20Mensajes%20QA/QA-Nuevos%20Mensajes%20%20WSDL%2018112021/WS_MM_ARTICULO_POR_TIENDA/WS_MM_ARTICULOS_POR_TIENDA.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\A\CPI\EF\Ajustes%20Mensajes%20QA\QA-Nuevos%20Mensajes%20%20WSDL%2018112021\WS_MM_ARTICULO_POR_TIENDA\WS_MM_ARTICULOS_POR_TIENDA.wsdl"><con:part><con:url>file:\C:\A\CPI\EF\Ajustes%20Mensajes%20QA\QA-Nuevos%20Mensajes%20%20WSDL%2018112021\WS_MM_ARTICULO_POR_TIENDA\WS_MM_ARTICULOS_POR_TIENDA.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.org" xmlns:n0="http://www.example.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org">
+      <xsd:element name="ElementInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="ArticulosPorTienda" type="n0:ArticulosPorTienda"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArticulosPorTienda">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Zcode" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Tienda" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ElementOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="dt_response" type="n0:dt_response"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="dt_response">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="error" type="n0:error"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ArticulosPorTiendaSet" type="n0:OutputArticulosPorTienda"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OutputArticulosPorTienda">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="ArticulosPorTienda" type="n0:ArticulosPorTiendaSet"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArticulosPorTiendaSet">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Tienda" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="ProductoPos" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Clasificacion" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="StatusProductoTienda" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="CostoVentas" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="UMBaseDelCosto" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="MonedaBase" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FechaInicioVigencia" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FechaFinVigencia" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TipoImpuesto1" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TipoValor1" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Valor1" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TipoImpuesto2" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TipoValor2" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Valor2" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TipoImpuesto3" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TipoValor3" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Valor3" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DescuentoPermitido" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Giro" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BodyInput">
+    <wsdl:part name="parameters" element="n0:ElementInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BodyOutput">
+    <wsdl:part name="parameters" element="n0:ElementOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WS_MM_ARTICULOS_POR_TIENDA">
+    <wsdl:operation name="WS_MM_ARTICULOS_POR_TIENDA">
+      <wsdl:input message="n0:BodyInput"></wsdl:input>
+      <wsdl:output message="n0:BodyOutput"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_MM_ARTICULOS_POR_TIENDA" type="n0:WS_MM_ARTICULOS_POR_TIENDA">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__binding"/>
+    </wsp:Policy>
+    <wsdl:operation name="WS_MM_ARTICULOS_POR_TIENDA">
+      <soap:operation soapAction="http://www.example.org"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_MM_ARTICULOS_POR_TIENDA">
+    <wsdl:port name="WS_MM_ARTICULOS_POR_TIENDA" binding="n0:WS_MM_ARTICULOS_POR_TIENDA">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_articulos_por_tienda"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:UsingPolicy required="true"/>
+  <wsp:Policy wsu:Id="BN__binding">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <wsp:ExactlyOne>
+                      <sp:HttpBasicAuthentication/>
+                      <sp:RequireClientCertificate/>
+                    </wsp:ExactlyOne>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <wsp:ExactlyOne>
+                  <sp:Basic256/>
+                  <sp:Basic192/>
+                  <sp:Basic128/>
+                  <sp:TripleDes/>
+                  <sp:Basic256Rsa15/>
+                  <sp:Basic192Rsa15/>
+                  <sp:Basic128Rsa15/>
+                  <sp:TripleDesRsa15/>
+                  <sp:Basic256Sha256/>
+                  <sp:Basic192Sha256/>
+                  <sp:Basic128Sha256/>
+                  <sp:TripleDesSha256/>
+                  <sp:Basic256Sha256Rsa15/>
+                  <sp:Basic192Sha256Rsa15/>
+                  <sp:Basic128Sha256Rsa15/>
+                  <sp:TripleDesSha256Rsa15/>
+                </wsp:ExactlyOne>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_articulos_por_tienda</con:endpoint></con:endpoints><con:operation id="05ed8e15-7dd8-420f-9721-ec143b3fac65" isOneWay="false" action="http://www.example.org" name="WS_MM_ARTICULOS_POR_TIENDA" bindingOperationName="WS_MM_ARTICULOS_POR_TIENDA" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dbaaf714-2618-4d90-911a-3069a948c87e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_articulos_por_tienda</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <exam:ElementInput>\r
+         <ArticulosPorTienda>\r
+            <Zcode>?</Zcode>\r
+            <Tienda>?</Tienda>\r
+         </ArticulosPorTienda>\r
+      </exam:ElementInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

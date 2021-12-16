@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c4d2b254-a430-4029-a307-a04d1dc48746" activeEnvironment="Default" name="Notficacion Entre Traspaso Neo - QA  V1" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="7504f3e2-b59b-4e06-8705-24d313302b6c" wsaVersion="NONE" name="WS_MM_NOTIFICACION_ENTRE_TRASPASOS" type="wsdl" bindingName="{http://www.example.org}WS_MM_NOTIFICACION_ENTRE_TRASPASOS" soapVersion="1_1" anonymous="optional" definition="WS_MM_NOTIFICACION_ENTRE_TRASPASOS-1.2.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\A\CPI\EF\Ajustes%20Mensajes\QA-Nuevos%20Mensajes%2018112021\WS_MM_TRASPASO_DE_ALMACEN_A_TIENDA\WS_MM_NOTIFICACION_ENTRE_TRASPASOS-1.2.wsdl"><con:part><con:url>file:\C:\A\CPI\EF\Ajustes%20Mensajes\QA-Nuevos%20Mensajes%2018112021\WS_MM_TRASPASO_DE_ALMACEN_A_TIENDA\WS_MM_NOTIFICACION_ENTRE_TRASPASOS-1.2.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.org" xmlns:n0="http://www.example.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org">
+      <xsd:element name="ElementInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Traspaso" type="n0:NotificacionTraspaso"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ElementOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="dt_response" type="n0:dt_response"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="NotificacionTraspaso">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="Zcode" type="xsd:string"/>
+          <xsd:element minOccurs="1" name="Sociedad" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="Puntovta" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="FechaContDocDesde" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="FechaContDocHasta" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="dt_response">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="error" type="n0:error"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="EnvContrTrasSet" type="n0:OutputTraspaso"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OutputTraspaso">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="EnvContrTras" type="n0:EnvContrTras"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EnvContrTras">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="AlmacenSap" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Puntovta" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Producto" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Cantidad" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="FechaContable" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Pedidosap" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Partidasap" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Docmat" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Uma" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Duma" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="NalTerna" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Nbase" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Movimiento" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Docref" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BodyInput">
+    <wsdl:part name="parameters" element="n0:ElementInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BodyOutput">
+    <wsdl:part name="parameters" element="n0:ElementOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WS_MM_NOTIFICACION_ENTRE_TRASPASOS">
+    <wsdl:operation name="WS_MM_NOTIFICACION_ENTRE_TRASPASOS">
+      <wsdl:input message="n0:BodyInput"></wsdl:input>
+      <wsdl:output message="n0:BodyOutput"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_MM_NOTIFICACION_ENTRE_TRASPASOS" type="n0:WS_MM_NOTIFICACION_ENTRE_TRASPASOS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__binding"/>
+    </wsp:Policy>
+    <wsdl:operation name="WS_MM_NOTIFICACION_ENTRE_TRASPASOS">
+      <soap:operation soapAction="http://www.example.org"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_MM_NOTIFICACION_ENTRE_TRASPASOS">
+    <wsdl:port name="WS_MM_NOTIFICACION_ENTRE_TRASPASOS" binding="n0:WS_MM_NOTIFICACION_ENTRE_TRASPASOS">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_traspaso_de_almacen_a_tienda"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:UsingPolicy required="true"/>
+  <wsp:Policy wsu:Id="BN__binding">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <wsp:ExactlyOne>
+                      <sp:HttpBasicAuthentication/>
+                      <sp:RequireClientCertificate/>
+                    </wsp:ExactlyOne>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <wsp:ExactlyOne>
+                  <sp:Basic256/>
+                  <sp:Basic192/>
+                  <sp:Basic128/>
+                  <sp:TripleDes/>
+                  <sp:Basic256Rsa15/>
+                  <sp:Basic192Rsa15/>
+                  <sp:Basic128Rsa15/>
+                  <sp:TripleDesRsa15/>
+                  <sp:Basic256Sha256/>
+                  <sp:Basic192Sha256/>
+                  <sp:Basic128Sha256/>
+                  <sp:TripleDesSha256/>
+                  <sp:Basic256Sha256Rsa15/>
+                  <sp:Basic192Sha256Rsa15/>
+                  <sp:Basic128Sha256Rsa15/>
+                  <sp:TripleDesSha256Rsa15/>
+                </wsp:ExactlyOne>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_traspaso_de_almacen_a_tienda</con:endpoint></con:endpoints><con:operation id="e40bbc18-c7d0-4eae-a765-57791df99356" isOneWay="false" action="http://www.example.org" name="WS_MM_NOTIFICACION_ENTRE_TRASPASOS" bindingOperationName="WS_MM_NOTIFICACION_ENTRE_TRASPASOS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d9d4a839-19c6-43d0-aba2-0dc5bba33d8e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/put_traspaso_de_almacen_a_tienda</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <exam:ElementInput>\r
+         <Traspaso>\r
+            <Zcode>?</Zcode>\r
+            <Sociedad>?</Sociedad>\r
+            <!--Optional:-->\r
+            <Puntovta>?</Puntovta>\r
+            <!--Optional:-->\r
+            <FechaContDocDesde>?</FechaContDocDesde>\r
+            <!--Optional:-->\r
+            <FechaContDocHasta>?</FechaContDocHasta>\r
+         </Traspaso>\r
+      </exam:ElementInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

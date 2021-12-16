@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b95ffc7d-17a9-457a-bd7b-f95b31cd7f4a" activeEnvironment="Default" name="SI_Traspaso_POS_to_S4Servicev2" resourceRoot="${projectDir}" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="170441e3-d71c-45bb-a4bb-3e7001e434af" wsaVersion="NONE" name="SI_Traspaso_POS_to_S4Binding" type="wsdl" bindingName="{http://freiche.com/S4/TraspasosConfirmacion}SI_Traspaso_POS_to_S4Binding" soapVersion="1_1" anonymous="optional" definition="../../Descargas/SI_Traspaso_POS_to_S4Servicev2.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\E:\OneDrive\Descargas\SI_Traspaso_POS_to_S4Servicev2.wsdl"><con:part><con:url>file:\E:\OneDrive\Descargas\SI_Traspaso_POS_to_S4Servicev2.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://freiche.com/S4/TraspasosConfirmacion" xmlns:p1="http://freiche.com/S4/TraspasosConfirmacion" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://freiche.com/S4/TraspasosConfirmacion" xmlns="http://freiche.com/S4/TraspasosConfirmacion">
+      <xsd:element name="MT_Resp" type="dt_response"/>
+      <xsd:element name="MT_Rqst" type="dt_request"/>
+      <xsd:complexType name="dt_response">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="error">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="message" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="A_MaterialDocumentHeader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" name="A_MaterialDocumentHeaderType">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element maxOccurs="1" minOccurs="0" name="FechaCreacion" type="xsd:dateTime"/>
+                      <xsd:element maxOccurs="1" minOccurs="0" name="NumeroDocumento" type="xsd:string"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="dt_request">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="to_MaterialDocumentHeader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="FechaContDoc" type="xsd:dateTime"/>
+                <!--<xsd:element type="xsd:string" name="GoodsMovementCode" minOccurs="0" maxOccurs="1"/>-->
+                <xsd:element name="to_MaterialDocumentItem">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element maxOccurs="unbounded" minOccurs="0" name="A_MaterialDocumentItemType">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="Producto" type="xsd:string"/>
+                            <xsd:element name="Puntovta" type="xsd:string"/>
+                            <xsd:element name="AlmacenSAP" type="xsd:string"/>
+                            <xsd:element name="PedidoSAP" type="xsd:string"/>
+                            <xsd:element name="PartidaSAP" type="xsd:string"/>
+                            <xsd:element name="CantidadRecibida" type="xsd:string"/>
+                            <xsd:element name="CantidaddelPedido" type="xsd:string"/>
+                            <!--<xsd:element type="xsd:string" name="GoodsMovementType" minOccurs="0" maxOccurs="1"/> 
+														<xsd:element type="xsd:string" name="IssuingOrReceivingPlant" minOccurs="0" maxOccurs="1"/>
+														<xsd:element type="xsd:string" name="IssuingOrReceivingStorageLoc" minOccurs="0" maxOccurs="1"/>-->
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_Rqst">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_Rqst" element="p1:MT_Rqst"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MT_Resp">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_Resp" element="p1:MT_Resp"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SI_Traspaso_POS_to_S4">
+    <wsdl:documentation/>
+    <wsdl:operation name="SI_Traspaso_POS_to_S4">
+      <wsdl:documentation/>
+      <wsdl:input message="p1:MT_Rqst"></wsdl:input>
+      <wsdl:output message="p1:MT_Resp"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_Traspaso_POS_to_S4Binding" type="p1:SI_Traspaso_POS_to_S4">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__binding"/>
+    </wsp:Policy>
+    <wsdl:operation name="SI_Traspaso_POS_to_S4">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_Traspaso_POS_to_S4Service">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_Traspaso_POS_to_S4Binding">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/POS/S4/traspasosConfirmacionPosBatch"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:UsingPolicy required="true"/>
+  <wsp:Policy wsu:Id="BN__binding">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <wsp:ExactlyOne>
+                      <sp:HttpBasicAuthentication/>
+                      <sp:RequireClientCertificate/>
+                    </wsp:ExactlyOne>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <wsp:ExactlyOne>
+                  <sp:Basic256/>
+                  <sp:Basic192/>
+                  <sp:Basic128/>
+                  <sp:TripleDes/>
+                  <sp:Basic256Rsa15/>
+                  <sp:Basic192Rsa15/>
+                  <sp:Basic128Rsa15/>
+                  <sp:TripleDesRsa15/>
+                  <sp:Basic256Sha256/>
+                  <sp:Basic192Sha256/>
+                  <sp:Basic128Sha256/>
+                  <sp:TripleDesSha256/>
+                  <sp:Basic256Sha256Rsa15/>
+                  <sp:Basic192Sha256Rsa15/>
+                  <sp:Basic128Sha256Rsa15/>
+                  <sp:TripleDesSha256Rsa15/>
+                </wsp:ExactlyOne>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/POS/S4/traspasosConfirmacionPosBatch</con:endpoint></con:endpoints><con:operation id="714a9f70-6b51-4db2-8856-248667d3ac26" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="SI_Traspaso_POS_to_S4" bindingOperationName="SI_Traspaso_POS_to_S4" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3cebd081-6ea7-44d2-8afa-d122a7bf21df" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/POS/S4/traspasosConfirmacionPosBatch</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tras="http://freiche.com/S4/TraspasosConfirmacion">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tras:MT_Rqst>\r
+         <!--1 or more repetitions:-->\r
+         <to_MaterialDocumentHeader>\r
+            <FechaContDoc>?</FechaContDoc>\r
+            <to_MaterialDocumentItem>\r
+               <!--Zero or more repetitions:-->\r
+               <A_MaterialDocumentItemType>\r
+                  <Producto>?</Producto>\r
+                  <Puntovta>?</Puntovta>\r
+                  <AlmacenSAP>?</AlmacenSAP>\r
+                  <PedidoSAP>?</PedidoSAP>\r
+                  <PartidaSAP>?</PartidaSAP>\r
+                  <CantidadRecibida>?</CantidadRecibida>\r
+                  <CantidaddelPedido>?</CantidaddelPedido>\r
+               </A_MaterialDocumentItemType>\r
+            </to_MaterialDocumentItem>\r
+         </to_MaterialDocumentHeader>\r
+      </tras:MT_Rqst>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

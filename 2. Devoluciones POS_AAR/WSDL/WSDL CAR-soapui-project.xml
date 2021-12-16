@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="324111ff-3dce-4a59-8494-26543d39a503" activeEnvironment="Default" name="WSDL CAR" resourceRoot="${projectDir}" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b89f8d1a-602b-4732-ae7e-b90be051010f" wsaVersion="NONE" name="SI_Ventas_POS_to_CARBinding" type="wsdl" bindingName="{http://freiche.com/CAR/Ventas}SI_Ventas_POS_to_CARBinding" soapVersion="1_1" anonymous="optional" definition="file:/E:/OneDrive/Descargas/SI_Ventas_POS_to_CARService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/E:/OneDrive/Descargas/SI_Ventas_POS_to_CARService.wsdl"><con:part><con:url>file:/E:/OneDrive/Descargas/SI_Ventas_POS_to_CARService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://freiche.com/CAR/Ventas" xmlns:p1="http://freiche.com/CAR/Ventas" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://freiche.com/CAR/Ventas" xmlns="http://freiche.com/CAR/Ventas">
+      <xsd:element name="MT_Resp" type="dt_response"/>
+      <xsd:element name="MT_Rqst" type="Bapi_RQST"/>
+      <xsd:complexType name="dt_response">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="error">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="message" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="bapi_return">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="FechaCreacion" type="xsd:dateTime"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="NumeroDocumento" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Bapi_RQST">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapitransaction">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Begindatetimestamp" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Enddatetimestamp" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Department" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Operatorqualifier" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Operatorid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactioncurrency" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="TransactioncurrencyIso" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Partnerqualifier" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Partnerid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Activitytime" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Registertime" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tendertime" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Pausetime" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Trainingtime" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tillid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Customeridpos" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Customerage" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Customerentrymethod" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origretailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origbusinessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origworkstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origtransnumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origbegintimestamp" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origreasoncode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origlineitemnumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Logsys" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapitransactextensions">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldgroup" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldname" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldvalue" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapiretaillineitem">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailtypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailreasoncode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Itemidqualifier" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Itemid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailquantity" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Salesunitofmeasure" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="SalesunitofmeasureIso" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Salesamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Normalsalesamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Cost" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Batchid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Serialnumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Promotionid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Itemidentrymethodcode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Actualunitprice" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Units" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Scantime" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Nonexistentarticleid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Nonexistentean" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Enteredean" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origretailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origbusinessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origworkstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origtransnumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origbegintimestamp" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origreasoncode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Origlineitemnumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Logsys" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="ItemidLong" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="NonexistentarticleidLong" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Pricetypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="OrderChannel" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapilineitemtax">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Taxsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Taxtypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Taxamount" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapilineitemtaxext">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Taxsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldgroup" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldname" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldvalue" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapilineitemdiscount">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Discountsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Discounttypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Discountreasoncode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Reductionamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Storefinancialledgeraccountid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Discountid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Discountidqualifier" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Bonusbuyid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Offerid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="DiscountidLong" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapilineitemdiscext">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Discountsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldgroup" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldname" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldvalue" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapitender">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tendersequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tendertypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tenderamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tendercurrency" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="TendercurrencyIso" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tenderid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Accountnumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Referenceid" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapitenderextensions">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tendersequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldgroup" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldname" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldvalue" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapifinancialmovement">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Financialsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Financialtypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Accountid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Accountassignmentobject" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Amount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Financialcurrency" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="FinancialcurrencyIso" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Refererenceid" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapifinacialmovementext">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Financialsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldgroup" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldname" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldvalue" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapiretailtotals">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailtypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Salesamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Lineitemcount" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapidiscounttotals">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Discounttypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Reductionamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Discountcount" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapitendertotals">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tendertypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tenderamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tendercount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Actualamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Shortamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Overamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Removalamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Removalcount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Bankamount" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapilineitemextensions">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Retailsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldgroup" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldname" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldvalue" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapigoodsmovement">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Goodsmovementsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Goodsmovementtypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Goodsmovementreasoncode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Itemidqualifier" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Itemid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Unitcount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Salesunitofmeasure" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="SalesunitofmeasureIso" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Salesamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Externalvaluationamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Batchid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Serialnumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Account" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Costcenter" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Topartyid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Locationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Supplierid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Referencedocumentqualifier" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Referencedocumentid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Referencedocumentsequencenr" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Unitsshippedcount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Deliverycompleteflag" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Specialstockcode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Expirationdate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Refdocyear" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Tofromlocationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Logsys" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="ItemidLong" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapigoodsmovementext">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Goodsmovementsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldgroup" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldname" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Fieldvalue" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapitaxtotals">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Taxtypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Taxamount" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Taxcount" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="bapicustomerdetails">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="Retailstoreid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Businessdaydate" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactiontypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Workstationid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Transactionsequencenumber" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Customerinformationtypecode" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Dataelementid" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Dataelementvalue" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="Customerdetailssequencenumber" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_Rqst">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_Rqst" element="p1:MT_Rqst"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MT_Resp">
+    <wsdl:documentation/>
+    <wsdl:part name="MT_Resp" element="p1:MT_Resp"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SI_Ventas_POS_to_CAR">
+    <wsdl:documentation/>
+    <wsdl:operation name="SI_Ventas_POS_to_CAR">
+      <wsdl:documentation/>
+      <wsdl:input message="p1:MT_Rqst"></wsdl:input>
+      <wsdl:output message="p1:MT_Resp"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_Ventas_POS_to_CARBinding" type="p1:SI_Ventas_POS_to_CAR">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SI_Ventas_POS_to_CAR">
+      <soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_Ventas_POS_to_CARService">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_Ventas_POS_to_CARBinding">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/soap/POS/CAR/ventas"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/soap/POS/CAR/ventas</con:endpoint></con:endpoints><con:operation id="c7fa7011-6544-4511-ab5a-638e19d45c99" isOneWay="false" action="http://sap.com/xi/WebService/soap1.1" name="SI_Ventas_POS_to_CAR" bindingOperationName="SI_Ventas_POS_to_CAR" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e17863c9-b34d-406b-a354-898bac4a2a4f" name="Devolucion Global"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/soap/POS/CAR/ventas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ven="http://freiche.com/CAR/Ventas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ven:MT_Rqst>\r
+         <!--Zero or more repetitions:-->\r
+         <bapitransaction>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>D002</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 10</Transactionsequencenumber>
+            <!--Optional:-->
+            <Begindatetimestamp>20211101180100</Begindatetimestamp>
+            <!--Optional:-->
+            <Enddatetimestamp>20211101180100</Enddatetimestamp>
+            <!--Optional:-->
+            <Operatorqualifier>1</Operatorqualifier>
+            <!--Optional:-->
+            <Operatorid>VENDEDOR123</Operatorid>
+            <!--Optional:-->
+            <Transactioncurrency>MXN</Transactioncurrency>
+            <!--Optional:-->
+            <Customeridpos>DF0247505</Customeridpos>
+            <!--Optional:-->
+            <Customerage>43</Customerage>
+            <Origbusinessdaydate>20211019</Origbusinessdaydate>
+            <!--Optional:-->
+            <Logsys/>
+         </bapitransaction>
+         <!--Zero or more repetitions:-->
+         <bapitransactextensions>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>D002</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 10</Transactionsequencenumber>
+            <!--Optional:-->
+            <Fieldgroup>IDVT</Fieldgroup>
+            <!--Optional:-->
+            <Fieldname>IDVT</Fieldname>
+            <!--Optional:-->
+            <Fieldvalue>Prueba 10</Fieldvalue>
+         </bapitransactextensions>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>D002</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 10</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>1</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>D002</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1701894</Itemid>
+            <!--Optional:-->
+            <Retailquantity>-1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>-104.00</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>-104.00</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>104.00</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>                                   
+         <!--Zero or more repetitions:-->
+         <bapitender>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>D002</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 10</Transactionsequencenumber>
+            <!--Optional:-->
+            <Tendersequencenumber>1</Tendersequencenumber>
+            <!--Optional:-->
+            <Tendertypecode>EF01</Tendertypecode>
+            <!--Optional:-->
+            <Tenderamount>-104.00</Tenderamount>
+            <!--Optional:-->
+            <Tendercurrency>MXN</Tendercurrency>
+         </bapitender>
+      </ven:MT_Rqst>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>S0022850690</con:username><con:password>Fr@iche.2021</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call><con:call id="81852d03-03b3-4f09-94cf-1f10b3f98344" name="Devolucion Individual"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/soap/POS/CAR/ventas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ven="http://freiche.com/CAR/Ventas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ven:MT_Rqst>
+         <!--Zero or more repetitions:-->
+         <bapitransaction>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>D001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 7</Transactionsequencenumber>
+            <!--Optional:-->
+            <Begindatetimestamp>20211101180100</Begindatetimestamp>
+            <!--Optional:-->
+            <Enddatetimestamp>20211101180100</Enddatetimestamp>
+            <!--Optional:-->
+            <Operatorqualifier>1</Operatorqualifier>
+            <!--Optional:-->
+            <Operatorid>VENDEDOR123</Operatorid>
+            <!--Optional:-->
+            <Transactioncurrency>MXN</Transactioncurrency>
+            <!--Optional:-->
+            <Customeridpos>DF0247505</Customeridpos>
+            <!--Optional:-->
+            <Customerage>43</Customerage>
+            <!--Optional:-->
+            <Origbusinessdaydate>20211019</Origbusinessdaydate>
+            <Logsys/>
+         </bapitransaction>
+         <!--Zero or more repetitions:-->
+         <bapitransactextensions>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>D001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 7</Transactionsequencenumber>
+            <!--Optional:-->
+            <Fieldgroup>IDVT</Fieldgroup>
+            <!--Optional:-->
+            <Fieldname>IDVT</Fieldname>
+            <!--Optional:-->
+            <Fieldvalue>Prueba 7</Fieldvalue>
+         </bapitransactextensions>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>D001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 7</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>1</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>D001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1701894</Itemid>
+            <!--Optional:-->
+            <Retailquantity>-1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>-104.00</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>-104.00</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>104.00</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <!--Zero or more repetitions:-->
+         <bapitender>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>D001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 7</Transactionsequencenumber>
+            <!--Optional:-->
+            <Tendersequencenumber>1</Tendersequencenumber>
+            <!--Optional:-->
+            <Tendertypecode>EF01</Tendertypecode>
+            <!--Optional:-->
+            <Tenderamount>-104.00</Tenderamount>
+            <!--Optional:-->
+            <Tendercurrency>MXN</Tendercurrency>
+         </bapitender>
+      </ven:MT_Rqst>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>S0022850690</con:username><con:password>Fr@iche.2021</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call><con:call id="25ee63ff-5e44-4460-81eb-b156ef5a2121" name="Venta Global"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/soap/POS/CAR/ventas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ven="http://freiche.com/CAR/Ventas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ven:MT_Rqst>\r
+         <!--Zero or more repetitions:-->\r
+         <bapitransaction>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Begindatetimestamp>20211101180100</Begindatetimestamp>
+            <!--Optional:-->
+            <Enddatetimestamp>20211101180100</Enddatetimestamp>
+            <!--Optional:-->
+            <Operatorqualifier>1</Operatorqualifier>
+            <!--Optional:-->
+            <Operatorid>VENDEDOR123</Operatorid>
+            <!--Optional:-->
+            <Transactioncurrency>MXN</Transactioncurrency>
+            <!--Optional:-->
+            <Customeridpos>DF0247505</Customeridpos>
+            <!--Optional:-->
+            <Customerage>43</Customerage>
+            <!--Optional:-->
+            <Logsys/>
+         </bapitransaction>
+         <!--Zero or more repetitions:-->
+         <bapitransactextensions>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Fieldgroup>IDVT</Fieldgroup>
+            <!--Optional:-->
+            <Fieldname>IDVT</Fieldname>
+            <!--Optional:-->
+            <Fieldvalue>Prueba 4</Fieldvalue>
+         </bapitransactextensions>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>1</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>F001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>01/01370A</Itemid>
+            <!--Optional:-->
+            <Retailquantity>5</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>G</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>29.50</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>29.50</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>5.90</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <!--Zero or more repetitions:-->
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>2</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>F001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>02/00039A</Itemid>
+            <!--Optional:-->
+            <Retailquantity>45</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>G</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>265.50</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>265.50</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>5.90</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>3</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>F001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1000071</Itemid>
+            <!--Optional:-->
+            <Retailquantity>1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>34.60</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>34.60</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>34.60</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>4</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>F001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1400269</Itemid>
+            <!--Optional:-->
+            <Retailquantity>1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>5.00</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>5.00</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>5.00</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>5</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>F001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1400521</Itemid>
+            <!--Optional:-->
+            <Retailquantity>1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>8.00</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>8.00</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>8.00</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>2</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>F001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1400490</Itemid>
+            <!--Optional:-->
+            <Retailquantity>1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>0.01</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>0.01</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>0.01</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>                                    
+         <!--Zero or more repetitions:-->
+         <bapitender>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>F001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 4</Transactionsequencenumber>
+            <!--Optional:-->
+            <Tendersequencenumber>1</Tendersequencenumber>
+            <!--Optional:-->
+            <Tendertypecode>TD01</Tendertypecode>
+            <!--Optional:-->
+            <Tenderamount>342.61</Tenderamount>
+            <!--Optional:-->
+            <Tendercurrency>MXN</Tendercurrency>
+         </bapitender>\r
+      </ven:MT_Rqst>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>S0022850690</con:username><con:password>Fr@iche.2021</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e1914576-d5b3-4ee5-bee8-61f1b7d4faac" name="Venta Individual"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/soap/POS/CAR/ventas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ven="http://freiche.com/CAR/Ventas">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ven:MT_Rqst>\r
+         <!--Zero or more repetitions:-->\r
+         <bapitransaction>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Begindatetimestamp>20211101180100</Begindatetimestamp>
+            <!--Optional:-->
+            <Enddatetimestamp>20211101180100</Enddatetimestamp>
+            <!--Optional:-->
+            <Operatorqualifier>1</Operatorqualifier>
+            <!--Optional:-->
+            <Operatorid>VENDEDOR123</Operatorid>
+            <!--Optional:-->
+            <Transactioncurrency>MXN</Transactioncurrency>
+            <!--Optional:-->
+            <Customeridpos>DF0247505</Customeridpos>
+            <!--Optional:-->
+            <Customerage>43</Customerage>
+            <!--Optional:-->
+            <Logsys/>
+         </bapitransaction>
+         <!--Zero or more repetitions:-->
+         <bapitransactextensions>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Fieldgroup>IDVT</Fieldgroup>
+            <!--Optional:-->
+            <Fieldname>IDVT</Fieldname>
+            <!--Optional:-->
+            <Fieldvalue>Prueba 1</Fieldvalue>
+         </bapitransactextensions>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>1</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>V001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>CFIJADOR1</Itemid>
+            <!--Optional:-->
+            <Retailquantity>5</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>G</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>3.00</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>3.00</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>0.60</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <!--Zero or more repetitions:-->
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>2</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>V001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>02/00039A</Itemid>
+            <!--Optional:-->
+            <Retailquantity>45</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>G</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>265.50</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>265.50</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>5.90</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>3</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>V001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1000071</Itemid>
+            <!--Optional:-->
+            <Retailquantity>1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>34.60</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>34.60</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>34.60</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>4</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>V001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1400022</Itemid>
+            <!--Optional:-->
+            <Retailquantity>1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>0.01</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>0.01</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>0.01</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>5</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>V001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1400021</Itemid>
+            <!--Optional:-->
+            <Retailquantity>1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>8.00</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>8.00</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>8.00</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>
+         <bapiretaillineitem>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Retailsequencenumber>2</Retailsequencenumber>
+            <!--Optional:-->
+            <Retailtypecode>V001</Retailtypecode>
+            <!--Optional:-->
+            <Itemidqualifier>2</Itemidqualifier>
+            <!--Optional:-->
+            <Itemid>1400020</Itemid>
+            <!--Optional:-->
+            <Retailquantity>1</Retailquantity>
+            <!--Optional:-->
+            <Salesunitofmeasure>ZPZ</Salesunitofmeasure>
+            <!--Optional:-->
+            <Salesamount>5.00</Salesamount>
+            <!--Optional:-->
+            <Normalsalesamount>5.00</Normalsalesamount>
+            <!--Optional:-->
+            <Actualunitprice>5.00</Actualunitprice>
+            <!--Optional:-->
+         </bapiretaillineitem>                                    
+         <!--Zero or more repetitions:-->
+         <bapitender>
+            <!--Optional:-->
+            <Retailstoreid>F001</Retailstoreid>
+            <!--Optional:-->
+            <Businessdaydate>20211101</Businessdaydate>
+            <!--Optional:-->
+            <Transactiontypecode>V001</Transactiontypecode>
+            <!--Optional:-->
+            <Transactionsequencenumber>Prueba 1</Transactionsequencenumber>
+            <!--Optional:-->
+            <Tendersequencenumber>1</Tendersequencenumber>
+            <!--Optional:-->
+            <Tendertypecode>EF01</Tendertypecode>
+            <!--Optional:-->
+            <Tenderamount>316.11</Tenderamount>
+            <!--Optional:-->
+            <Tendercurrency>MXN</Tendercurrency>
+         </bapitender>\r
+      </ven:MT_Rqst>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>S0022850690</con:username><con:password>Fr@iche.2021</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sap.com/xi/WebService/soap1.1"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

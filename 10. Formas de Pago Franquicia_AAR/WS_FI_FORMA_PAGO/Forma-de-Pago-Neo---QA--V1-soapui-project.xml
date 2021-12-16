@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="3e6d5bf6-2fae-4580-a654-ce925342ec44" activeEnvironment="Default" name="WS_FI_FORMA_PAGO" resourceRoot="${projectDir}" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="742ac90b-16e7-4fc0-844a-de38c775a06d" wsaVersion="NONE" name="WS_FI_FORMA_PAGOSOAP" type="wsdl" bindingName="{http://www.example.org}WS_FI_FORMA_PAGOSOAP" soapVersion="1_1" anonymous="optional" definition="WS_FI_FORMA_PAGO.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\E:\OneDrive\Documentos\QA\10.%20Formas%20de%20Pago%20Franquicia_AAR\WS_FI_FORMA_PAGO\WS_FI_FORMA_PAGO.wsdl"><con:part><con:url>file:\E:\OneDrive\Documentos\QA\10.%20Formas%20de%20Pago%20Franquicia_AAR\WS_FI_FORMA_PAGO\WS_FI_FORMA_PAGO.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.org" xmlns:n0="http://www.example.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org">
+      <xsd:element name="ElementInput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Zcode" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Sociedad" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="Deudor" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ElementOutput">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="error" type="n0:error"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="Resultado" type="n0:Resultado"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="error">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Resultado">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="DeudorDetalle" type="n0:DeudorDetalle"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DeudorDetalle">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Deudor" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Sociedad" type="xsd:string"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="ListaCuentasBancarias" type="n0:ListaCuentasBancarias"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="ListaFormaPago" type="n0:ListaFormaPago"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListaCuentasBancarias">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="CuentaBancaria" type="n0:CuentaBancaria"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CuentaBancaria">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="NumeroCuentaBancaria" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ListaFormaPago">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="FormaPagoItem" type="n0:FormaPagoItem"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FormaPagoItem">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CodigoFormaPago" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Descripcion" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Predeterminado" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="BodyInput">
+    <wsdl:part name="parameters" element="n0:ElementInput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BodyOutput">
+    <wsdl:part name="parameters" element="n0:ElementOutput"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WS_FI_FORMA_PAGO">
+    <wsdl:operation name="WS_FI_FORMA_PAGO">
+      <wsdl:input message="n0:BodyInput"></wsdl:input>
+      <wsdl:output message="n0:BodyOutput"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_FI_FORMA_PAGOSOAP" type="n0:WS_FI_FORMA_PAGO">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__binding"/>
+    </wsp:Policy>
+    <wsdl:operation name="WS_FI_FORMA_PAGO">
+      <soap:operation soapAction="https://fraiche-subcta.it-cpi003-rt.cfapps.us10.hana.ondemand.com/cxf/get_forma_pago"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_FI_FORMA_PAGO">
+    <wsdl:port name="WS_FI_FORMA_PAGOSOAP" binding="n0:WS_FI_FORMA_PAGOSOAP">
+      <soap:address location="https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/forma_pago"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:UsingPolicy required="true"/>
+  <wsp:Policy wsu:Id="BN__binding">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <wsp:ExactlyOne>
+                      <sp:HttpBasicAuthentication/>
+                      <sp:RequireClientCertificate/>
+                    </wsp:ExactlyOne>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <wsp:ExactlyOne>
+                  <sp:Basic256/>
+                  <sp:Basic192/>
+                  <sp:Basic128/>
+                  <sp:TripleDes/>
+                  <sp:Basic256Rsa15/>
+                  <sp:Basic192Rsa15/>
+                  <sp:Basic128Rsa15/>
+                  <sp:TripleDesRsa15/>
+                  <sp:Basic256Sha256/>
+                  <sp:Basic192Sha256/>
+                  <sp:Basic128Sha256/>
+                  <sp:TripleDesSha256/>
+                  <sp:Basic256Sha256Rsa15/>
+                  <sp:Basic192Sha256Rsa15/>
+                  <sp:Basic128Sha256Rsa15/>
+                  <sp:TripleDesSha256Rsa15/>
+                </wsp:ExactlyOne>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/forma_pago</con:endpoint></con:endpoints><con:operation id="d4acf45b-ab8f-403b-9247-75007330bb24" isOneWay="false" action="https://fraiche-subcta.it-cpi003-rt.cfapps.us10.hana.ondemand.com/cxf/get_forma_pago" name="WS_FI_FORMA_PAGO" bindingOperationName="WS_FI_FORMA_PAGO" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="687c5060-3526-4934-bcaa-89b095f51456" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://l250326-iflmap.hcisbp.us3.hana.ondemand.com:443/cxf/forma_pago</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <exam:ElementInput>\r
+         <Zcode>?</Zcode>\r
+         <Sociedad>?</Sociedad>\r
+         <Deudor>?</Deudor>\r
+      </exam:ElementInput>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://fraiche-subcta.it-cpi003-rt.cfapps.us10.hana.ondemand.com/cxf/get_forma_pago"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
